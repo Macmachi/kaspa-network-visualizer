@@ -1,0 +1,47 @@
+/*By Arnaud R.*/
+body {
+    background-color: #f8f9fa;
+}
+.canvas-container {
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+#kaspaCanvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.donation-code {
+    word-break: break-all;
+}
+#bpsValue {
+    font-size: 1rem;
+    vertical-align: middle;
+}
+.card {
+    transition: box-shadow 0.3s ease-in-out;
+}
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Styles pour changer la couleur du slider */
+.form-range::-webkit-slider-thumb {
+    background: #006195;
+}
+.form-range::-moz-range-thumb {
+    background: #006195;
+}
+.form-range::-ms-thumb {
+    background: #006195;
+}
+.form-range::-webkit-slider-runnable-track {
+    background: #0080c5;
+}
+.form-range::-moz-range-track {
+    background: #0080c5;
+}
+.form-range::-ms-track {
+    background: #0080c5;
+}

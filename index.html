@@ -1,0 +1,66 @@
+<!-- 
+ Arnaud R. 
+ V1.0.0 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaspa Network Animation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Kaspa Network Visualization</h1>
+        <h2 class="text-center mb-4" id="subtitle">BPS: 9</h2>
+        
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10 canvas-container">
+                <canvas id="kaspaCanvas" width="800" height="600" class="img-fluid"></canvas>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="bpsSlider" class="form-label">BPS:</label>
+                    <input type="range" class="form-range" id="bpsSlider" min="1" max="100" value="9">
+                    <span id="bpsValue" class="badge bg-primary">9</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text text-center fst-italic">
+                            This animation was created based on the book: "Kaspa: From Ghost to Knight, off to heal the blockchain's plight"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Support Our Work</h5>
+                        <p class="card-text">Thank you for your support! If you enjoyed my work, please consider donating:</p>
+                        <p class="card-text donation-code"><code>kaspa:qqngpnpwrfhexgu8kzk3lteu5fakh6fylmt53gt7qwtf4vttjyvfyrnr8shwa</code></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
