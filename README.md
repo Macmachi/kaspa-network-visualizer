@@ -1,4 +1,4 @@
-# Kaspa Network Visualization
+# Kaspa-Inspired Network BPS Visualizer
 
 An interactive and dynamic visualization of the Kaspa network, inspired by the book "Kaspa: From Ghost to Knight, off to heal the blockchain's plight".
 
