@@ -22,10 +22,26 @@ class Block {
         ctx.fill();
         ctx.closePath();
 
-        if (this.parent && this.parent.x >= 0) {
+        // Dessiner les liens vers les parents
+        this.drawLinks();
+    }
+
+    drawLinks() {
+        if (this.parent) {
+            this.drawLink(this.parent);
+        }
+        // Dessiner les liens vers les enfants
+        this.children.forEach(child => {
+            this.drawLink(child);
+        });
+    }
+
+    drawLink(otherBlock) {
+        // Vérifier si l'un des blocs est encore visible
+        if (this.x >= 0 || otherBlock.x >= 0) {
             ctx.beginPath();
             ctx.moveTo(this.x, this.y);
-            ctx.lineTo(this.parent.x, this.parent.y);
+            ctx.lineTo(otherBlock.x, otherBlock.y);
             ctx.strokeStyle = 'rgba(189, 195, 199, 0.4)';
             ctx.stroke();
             ctx.closePath();
