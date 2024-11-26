@@ -7,8 +7,8 @@ const bpsSlider = document.getElementById('bpsSlider');
 const bpsValue = document.getElementById('bpsValue');
 const subtitleDisplay = document.getElementById('subtitle');
 
-const PADDING = 20; // Espace minimal depuis les bords
-const NODE_SPREAD = 40; // Distance maximale verticale entre parent et enfant
+const PADDING = 20;
+const NODE_SPREAD = 40;
 
 class Block {
     constructor(x, y, parent) {
@@ -64,11 +64,27 @@ blocks.push(genesisBlock);
 
 let blocksCreated = 0;
 let lastSecond = Date.now();
-let targetBPS = 9;
+let targetBPS = 1;
 let blockInterval;
 
+function getBPSLabel(bps) {
+    switch (bps) {
+        case 1:
+            return "Currently (2024)";
+        case 10:
+            return "Coming soon (2025)";
+        case 32:
+            return "Could be an intermediate target before going higher";
+        case 100:
+            return "Futur Sutton target";
+        case 250:
+            return "Dreaming is a free permit for imagination";
+        default:
+            return "";
+    }
+}
+
 function getValidYPosition(parentY) {
-    // Calculer une position Y aléatoire dans les limites de la fenêtre
     const minY = Math.max(PADDING, parentY - NODE_SPREAD);
     const maxY = Math.min(canvas.height - PADDING, parentY + NODE_SPREAD);
     return Math.random() * (maxY - minY) + minY;
@@ -117,7 +133,12 @@ function animate() {
     blocks = blocks.filter(block => block.x >= -50);
 
     if (elapsed >= 1000) {
-        subtitleDisplay.textContent = `BPS: ${blocksCreated}`;
+        const label = getBPSLabel(targetBPS);
+        if (label) {
+            subtitleDisplay.textContent = `${blocksCreated} BPS - ${label}`;
+        } else {
+            subtitleDisplay.textContent = `${blocksCreated} BPS`;
+        }
         blocksCreated = 0;
         lastSecond = now;
     }
@@ -125,17 +146,37 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-bpsSlider.addEventListener('input', function() {
-    targetBPS = parseInt(this.value);
-    bpsValue.textContent = targetBPS;
+function updateBPS(bps) {
+    targetBPS = bps;
+    bpsSlider.value = bps;
+    bpsValue.innerHTML = `${bps} BPS`;
+    
+    const label = getBPSLabel(bps);
+    if (label) {
+        subtitleDisplay.textContent = `${bps} BPS - ${label}`;
+    } else {
+        subtitleDisplay.textContent = `${bps} BPS`;
+    }
     
     if (blockInterval) {
         clearInterval(blockInterval);
     }
     
-    const interval = 1000 / targetBPS;
+    const interval = 1000 / bps;
     blockInterval = setInterval(createNewBlock, interval);
+}
+
+bpsSlider.addEventListener('input', function() {
+    updateBPS(parseInt(this.value));
 });
 
-blockInterval = setInterval(createNewBlock, 1000 / targetBPS);
+document.querySelectorAll('.bps-preset').forEach(button => {
+    button.addEventListener('click', function() {
+        const bps = parseInt(this.dataset.bps);
+        updateBPS(bps);
+    });
+});
+
+// Initialisation
+updateBPS(targetBPS);
 requestAnimationFrame(animate);

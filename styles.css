@@ -1,4 +1,8 @@
-/*By Arnaud R.*/
+/*
+ Rymentz
+ MIT License
+*/
+
 body {
     background-color: #f8f9fa;
 }
@@ -17,8 +21,10 @@ body {
 }
 #bpsValue {
     font-size: 1rem;
-    vertical-align: middle;
+    padding: 0.5rem 0.75rem;
+    margin-left: 10px;
 }
+
 .card {
     transition: box-shadow 0.3s ease-in-out;
 }
@@ -26,7 +32,6 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Styles pour changer la couleur du slider */
 .form-range::-webkit-slider-thumb {
     background: #006195;
 }
@@ -44,4 +49,22 @@ body {
 }
 .form-range::-ms-track {
     background: #0080c5;
+}
+
+.bps-preset {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    min-width: 45px;
+}
+.bps-preset:hover {
+    background-color: #006195;
+    color: white;
+}
+.btn-outline-primary {
+    border-color: #006195;
+    color: #006195;
+}
+.btn-outline-primary:hover {
+    background-color: #006195;
+    border-color: #006195;
 }
