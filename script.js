@@ -1,9 +1,14 @@
-// By Arnaud R. 
+// Rymentz
+// MIT License
+
 const canvas = document.getElementById('kaspaCanvas');
 const ctx = canvas.getContext('2d');
 const bpsSlider = document.getElementById('bpsSlider');
 const bpsValue = document.getElementById('bpsValue');
 const subtitleDisplay = document.getElementById('subtitle');
+
+const PADDING = 20; // Espace minimal depuis les bords
+const NODE_SPREAD = 40; // Distance maximale verticale entre parent et enfant
 
 class Block {
     constructor(x, y, parent) {
@@ -22,7 +27,6 @@ class Block {
         ctx.fill();
         ctx.closePath();
 
-        // Dessiner les liens vers les parents
         this.drawLinks();
     }
 
@@ -30,14 +34,12 @@ class Block {
         if (this.parent) {
             this.drawLink(this.parent);
         }
-        // Dessiner les liens vers les enfants
         this.children.forEach(child => {
             this.drawLink(child);
         });
     }
 
     drawLink(otherBlock) {
-        // Vérifier si l'un des blocs est encore visible
         if (this.x >= 0 || otherBlock.x >= 0) {
             ctx.beginPath();
             ctx.moveTo(this.x, this.y);
@@ -57,13 +59,20 @@ class Block {
 }
 
 let blocks = [];
-const genesisBlock = new Block(canvas.width - 50, 300, null);
+const genesisBlock = new Block(canvas.width - 50, canvas.height / 2, null);
 blocks.push(genesisBlock);
 
 let blocksCreated = 0;
 let lastSecond = Date.now();
 let targetBPS = 9;
-let lastBlockCreation = 0;
+let blockInterval;
+
+function getValidYPosition(parentY) {
+    // Calculer une position Y aléatoire dans les limites de la fenêtre
+    const minY = Math.max(PADDING, parentY - NODE_SPREAD);
+    const maxY = Math.min(canvas.height - PADDING, parentY + NODE_SPREAD);
+    return Math.random() * (maxY - minY) + minY;
+}
 
 function createNewBlock() {
     const parentIndices = [];
@@ -77,9 +86,11 @@ function createNewBlock() {
     if (parentIndices.length === 0) return;
 
     const mainParent = blocks[parentIndices[0]];
+    const newY = getValidYPosition(mainParent.y);
+    
     const newBlock = new Block(
         canvas.width - 50,
-        Math.max(10, Math.min(canvas.height - 10, mainParent.y + (Math.random() * 160 - 80))),
+        newY,
         mainParent
     );
 
@@ -92,7 +103,7 @@ function createNewBlock() {
     blocksCreated++;
 }
 
-function animate(currentTime) {
+function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     blocks.forEach(block => {
@@ -102,11 +113,6 @@ function animate(currentTime) {
 
     const now = Date.now();
     const elapsed = now - lastSecond;
-
-    if (currentTime - lastBlockCreation > 1000 / targetBPS) {
-        createNewBlock();
-        lastBlockCreation = currentTime;
-    }
 
     blocks = blocks.filter(block => block.x >= -50);
 
@@ -122,6 +128,14 @@ function animate(currentTime) {
 bpsSlider.addEventListener('input', function() {
     targetBPS = parseInt(this.value);
     bpsValue.textContent = targetBPS;
+    
+    if (blockInterval) {
+        clearInterval(blockInterval);
+    }
+    
+    const interval = 1000 / targetBPS;
+    blockInterval = setInterval(createNewBlock, interval);
 });
 
+blockInterval = setInterval(createNewBlock, 1000 / targetBPS);
 requestAnimationFrame(animate);
