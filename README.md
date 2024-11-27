@@ -3,6 +3,25 @@
 An interactive and dynamic visualization of the Kaspa network, inspired by the book "Kaspa: From Ghost to Knight, off to heal the blockchain's plight".
 You can check the demo here : https://macmachi.github.io/kaspa-network-visualizer/
 
+
+## 🗣️ Community Feedback
+- **LinkedIn -  Kaspa Currency (Official Account)**: Highlights the impressive visuals and expected performance, noting that "even at 10 BPS, this will outperform the entire industry". He expresses amazement at the visualization of 100-250 BPS speeds.
+  > [View on LinkedIn](https://www.linkedin.com/posts/kaspa-currency_kaspa-pow-blockdag-activity-7267304828521844736-bd_Z?utm_source=share&utm_medium=member_desktop](https://www.linkedin.com/posts/kaspa-currency_kaspa-pow-blockdag-activity-7267304828521844736-bd_Z?utm_source=share&utm_medium=member_desktop))
+- **X/Twitter - Kaspa Currency (Official Account)**: Official communication showcasing the current and future BPS visualization of the Kaspa network.
+  > [View on X](https://x.com/kaspacurrency/status/1861535300604043307)
+- **X/Twitter - Michael Sutton**: Highlights Kaspa's BlockDAG visualization with the new design.
+  > [View on X](https://x.com/MichaelSuttonIL/status/1861351297397735786)
+- **X/Twitter - Crypto Proselyte**: "This $KAS  100 BPS block visualization is literally an artistic masterpiece , I can't stop watching it."
+  > [View on X](https://x.com/Crypt0Proselyte/status/1861452321793953847)
+
+The reactions particularly focus on:
+- Network visualization quality
+- Impressive expected performance
+- Enthusiasm for future project development
+- Emphasis on processing capabilities (BPS - Blocks Per Second)
+
+These responses highlight the community's interest in Kaspa's technical aspects and network performance, particularly its block processing capabilities.
+
 ## 🚀 Features
 
 - Real-time animation of the Kaspa network
