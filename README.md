@@ -14,14 +14,6 @@ You can check the demo here : https://macmachi.github.io/kaspa-network-visualize
 - **X/Twitter - Crypto Proselyte**: "This $KAS  100 BPS block visualization is literally an artistic masterpiece , I can't stop watching it."
   > [View on X](https://x.com/Crypt0Proselyte/status/1861452321793953847)
 
-The reactions particularly focus on:
-- Network visualization quality
-- Impressive expected performance
-- Enthusiasm for future project development
-- Emphasis on processing capabilities (BPS - Blocks Per Second)
-
-These responses highlight the community's interest in Kaspa's technical aspects and network performance, particularly its block processing capabilities.
-
 ## 🚀 Features
 
 - Real-time animation of the Kaspa network
