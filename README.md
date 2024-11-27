@@ -5,7 +5,7 @@ You can check the demo here : https://macmachi.github.io/kaspa-network-visualize
 
 
 ## 🗣️ Community Feedback
-- **LinkedIn -  Kaspa Currency (Official Account)**: Highlights the impressive visuals and expected performance, noting that "even at 10 BPS, this will outperform the entire industry". He expresses amazement at the visualization of 100-250 BPS speeds.
+- **LinkedIn -  Kaspa Currency (Official Account)**: Official communication showcasing the current and future BPS visualization of the Kaspa network.
   > [View on LinkedIn](https://www.linkedin.com/posts/kaspa-currency_kaspa-pow-blockdag-activity-7267304828521844736-bd_Z?utm_source=share&utm_medium=member_desktop](https://www.linkedin.com/posts/kaspa-currency_kaspa-pow-blockdag-activity-7267304828521844736-bd_Z?utm_source=share&utm_medium=member_desktop))
 - **X/Twitter - Kaspa Currency (Official Account)**: Official communication showcasing the current and future BPS visualization of the Kaspa network.
   > [View on X](https://x.com/kaspacurrency/status/1861535300604043307)
