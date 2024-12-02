@@ -13,6 +13,8 @@ You can check the demo here : https://macmachi.github.io/kaspa-network-visualize
   > [View on X](https://x.com/MichaelSuttonIL/status/1861351297397735786)
 - **X/Twitter - Crypto Proselyte**: "This $KAS  100 BPS block visualization is literally an artistic masterpiece , I can't stop watching it."
   > [View on X](https://x.com/Crypt0Proselyte/status/1861452321793953847)
+- **Youtube - Kaspa silver**: "Kaspa News: Binance Listing Rumors, Institutional Adoption & More!"
+  > [View on Youtube](https://youtu.be/Q3v9oXJsAQg?t=258))
 
 ## 🚀 Features
 
